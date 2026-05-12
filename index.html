@@ -110,15 +110,15 @@
 
     /* ── 네비 링크 호버/활성 상태 ── */
     .nav-link {
-      color: rgba(219, 234, 254, 0.75);  /* blue-100/75 — 기본: 약간 흐린 흰색 */
+      color: #334155;   /* 흰 배경에서 진한 슬레이트 */
       text-decoration: none;
       padding: 6px 0;
       position: relative;
       transition: color 0.18s ease;
     }
-    /* 호버: 틸 포인트 컬러로 확실한 대비 */
+    /* 호버: 브랜드 블루 */
     .nav-link:hover {
-      color: #2DD4A0;   /* teal-400 — 다크 네이비 배경에서 가장 눈에 띄는 색 */
+      color: #1B3F82;
     }
     /* 호버 언더라인 */
     .nav-link::after {
@@ -168,35 +168,12 @@
   <!-- ══════════════════════════════════════════
        NAVIGATION  (다크 반전 헤더)
   ══════════════════════════════════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50" style="background:#0D2050;box-shadow:0 2px 20px rgba(13,32,80,0.35)">
+  <nav class="fixed top-0 left-0 right-0 z-50" style="background:#ffffff;box-shadow:0 2px 16px rgba(0,0,0,0.10);border-bottom:1px solid #E8ECF2;">
     <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
 
-      <!-- 로고 — 흰색 반전 버전 -->
-      <a href="#" class="flex items-center gap-2.5 min-h-[44px]">
-        <!-- 브릿지 로고: 상승 기둥 4개 + 틸 아치 케이블 + 정점 포인트 -->
-        <svg width="38" height="38" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 하단 도로/덱 라인 -->
-          <line x1="0" y1="31" x2="40" y2="31" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- 상승 교각 기둥 (좌→우, 점점 높아짐) -->
-          <rect x="1"  y="24" width="5" height="7"  rx="1.5" fill="rgba(255,255,255,0.40)"/>
-          <rect x="10" y="18" width="5" height="13" rx="1.5" fill="rgba(255,255,255,0.62)"/>
-          <rect x="19" y="11" width="5" height="20" rx="1.5" fill="rgba(255,255,255,0.84)"/>
-          <rect x="28" y="4"  width="5" height="27" rx="1.5" fill="#ffffff"/>
-          <!-- 브릿지 아치 케이블: 좌하단→우상단, 교각 꼭짓점 연결 -->
-          <path d="M 3.5,24 C 10,16 18,8 30.5,4"
-                fill="none" stroke="#2DD4A0" stroke-width="2.2" stroke-linecap="round"/>
-          <!-- 수직 행거 (케이블→덱) -->
-          <line x1="3.5"  y1="24" x2="3.5"  y2="31" stroke="rgba(45,212,160,0.40)" stroke-width="1"/>
-          <line x1="13"   y1="19" x2="13"   y2="31" stroke="rgba(45,212,160,0.40)" stroke-width="1"/>
-          <line x1="22"   y1="13" x2="22"   y2="31" stroke="rgba(45,212,160,0.40)" stroke-width="1"/>
-          <!-- 정점 포인트 (틸 원) -->
-          <circle cx="36" cy="3" r="3" fill="#0D9B77"/>
-          <circle cx="36" cy="3" r="1.4" fill="#2DD4A0"/>
-        </svg>
-        <div>
-          <span class="text-white font-bold text-lg leading-none tracking-tight">Fine<span class="text-teal-400">Bridge</span></span>
-          <p class="text-blue-300 text-[10px] leading-none mt-0.5 tracking-wide font-medium">경영컨설팅 전문회사</p>
-        </div>
+      <!-- 로고 (원본, 흰 배경 헤더) -->
+      <a href="#" class="flex items-center min-h-[44px]">
+        <img src="finebridge-logo.jpg" alt="파인브릿지 로고" style="height:52px; width:auto; display:block;">
       </a>
 
       <!-- 데스크탑 메뉴 -->
@@ -210,7 +187,7 @@
       <div class="flex items-center gap-2.5">
         <!-- 전화번호 (sm 이상) -->
         <a href="tel:1661-1274"
-           class="hidden sm:flex items-center gap-1.5 text-teal-400 hover:text-teal-300 font-bold text-sm transition-colors min-h-[44px]">
+           class="hidden sm:flex items-center gap-1.5 text-brand-700 hover:text-brand-500 font-bold text-sm transition-colors min-h-[44px]">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>
@@ -224,7 +201,7 @@
         <!-- 햄버거 (모바일) -->
         <button onclick="document.getElementById('mobileMenu').classList.toggle('open')"
                 class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -232,12 +209,12 @@
     </div>
 
     <!-- 모바일 드롭다운 — 다크 계열 유지 -->
-    <div id="mobileMenu" style="background:#112464" class="md:hidden border-t border-white/10 px-5 py-3 space-y-1 text-sm font-medium">
-      <a href="#services" class="block py-3 text-blue-100 hover:text-white border-b border-white/8 transition-colors min-h-[44px] flex items-center">서비스</a>
-      <a href="#why"      class="block py-3 text-blue-100 hover:text-white border-b border-white/8 transition-colors min-h-[44px] flex items-center">차별점</a>
-      <a href="#process"  class="block py-3 text-blue-100 hover:text-white border-b border-white/8 transition-colors min-h-[44px] flex items-center">진행 절차</a>
-      <a href="#faq"      class="block py-3 text-blue-100 hover:text-white border-b border-white/8 transition-colors min-h-[44px] flex items-center">자주 묻는 질문</a>
-      <a href="tel:1661-1274" class="flex items-center gap-2 py-3 text-teal-400 font-bold min-h-[44px]">
+    <div id="mobileMenu" style="background:#F8F9FA" class="md:hidden border-t border-gray-200 px-5 py-3 space-y-1 text-sm font-medium">
+      <a href="#services" class="block py-3 text-gray-700 hover:text-brand-700 border-b border-gray-100 transition-colors min-h-[44px] flex items-center">서비스</a>
+      <a href="#why"      class="block py-3 text-gray-700 hover:text-brand-700 border-b border-gray-100 transition-colors min-h-[44px] flex items-center">차별점</a>
+      <a href="#process"  class="block py-3 text-gray-700 hover:text-brand-700 border-b border-gray-100 transition-colors min-h-[44px] flex items-center">진행 절차</a>
+      <a href="#faq"      class="block py-3 text-gray-700 hover:text-brand-700 border-b border-gray-100 transition-colors min-h-[44px] flex items-center">자주 묻는 질문</a>
+      <a href="tel:1661-1274" class="flex items-center gap-2 py-3 text-brand-700 font-bold min-h-[44px]">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
         1661-1274
       </a>
@@ -401,21 +378,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-        <!-- S1: 국가 지원금 -->
-        <div class="svc-card bg-white rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-brand-900 text-base mb-2">국가 지원금 분석 및 청구</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">업종·규모·상황에 맞는 보조금·바우처·지원사업을 발굴해 청구 완료까지 전 과정을 대행합니다.</p>
-          <div class="mt-4 pt-4 border-t border-gray-100">
-            <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">보조금 · 바우처 · 지원사업</span>
-          </div>
-        </div>
-
-        <!-- S2: 정책자금 -->
+        <!-- S1: 정책자금 -->
         <div class="svc-card bg-white rounded-2xl p-6">
           <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,6 +389,20 @@
           <p class="text-gray-500 text-sm leading-relaxed">중진공·소진공·신보 등 기관별 자격 분석 후 2~5% 저금리 정책자금을 최적 경로로 확보합니다.</p>
           <div class="mt-4 pt-4 border-t border-gray-100">
             <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">창업 · 운영 · 시설 자금</span>
+          </div>
+        </div>
+
+        <!-- S2: 기업인증·특허·벤처 -->
+        <div class="svc-card bg-white rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-brand-900 text-base mb-2">기업인증 · 연구소 설립 · 특허 · 벤처</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">기업부설연구소 설립, 특허 출원·등록, 벤처기업·이노비즈·ISO 인증까지 경쟁력과 신뢰도를 높입니다.</p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">벤처 · 이노비즈 · 특허출원</span>
           </div>
         </div>
 
@@ -443,34 +420,20 @@
           </div>
         </div>
 
-        <!-- S4: 기업인증·특허·벤처 -->
+        <!-- S4: 국가 지원금 (마지막) -->
         <div class="svc-card bg-white rounded-2xl p-6">
           <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
             <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/>
             </svg>
           </div>
-          <h3 class="font-bold text-brand-900 text-base mb-2">기업인증 · 연구소 설립 · 특허 · 벤처</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">기업부설연구소 설립, 특허 출원·등록, 벤처기업·이노비즈·ISO 인증까지 경쟁력과 신뢰도를 높입니다.</p>
+          <h3 class="font-bold text-brand-900 text-base mb-2">국가 지원금 분석 및 청구</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">업종·규모·상황에 맞는 보조금·바우처·지원사업을 발굴해 청구 완료까지 전 과정을 대행합니다.</p>
           <div class="mt-4 pt-4 border-t border-gray-100">
-            <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">벤처 · 이노비즈 · 특허출원</span>
+            <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">보조금 · 바우처 · 지원사업</span>
           </div>
         </div>
 
-        <!-- S5: 담보 운전자금 -->
-        <div class="svc-card bg-white rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-brand-900 text-base mb-2">기기 · 집기 담보 운전자금 지원</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">보유 기계·설비를 담보로 활용해 부동산 없이도 사업 운전자금을 조달할 수 있도록 컨설팅합니다.</p>
-          <div class="mt-4 pt-4 border-t border-gray-100">
-            <span class="inline-block text-xs text-teal-700 bg-teal-50 font-medium px-2.5 py-1 rounded-md svc-tag">동산담보 · 운전자금</span>
-          </div>
-        </div>
 
         <!-- CTA 카드 -->
         <div class="bg-brand-900 rounded-2xl p-6 flex flex-col justify-between" style="background: linear-gradient(135deg,#0D2050,#1B3F82)">
@@ -701,30 +664,22 @@
 
           <div>
             <label class="block text-xs font-semibold text-blue-200 mb-2.5 uppercase tracking-wide">관심 서비스 (복수 선택 가능)</label>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-2.5">
+            <div class="grid grid-cols-2 gap-2.5">
               <label class="flex items-center gap-2 cursor-pointer group">
                 <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
                 <span class="text-xs text-blue-100 group-hover:text-white transition-colors">정책자금 컨설팅</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer group">
                 <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
-                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">국가 지원금 청구</span>
+                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">벤처·이노비즈 기업인증</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
+                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">특허·연구소 설립</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer group">
                 <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
                 <span class="text-xs text-blue-100 group-hover:text-white transition-colors">경정청구·세금환급</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
-                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">기업인증·특허</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
-                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">담보 운전자금</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input type="checkbox" name="svc" class="w-4 h-4 rounded accent-teal-400"/>
-                <span class="text-xs text-blue-100 group-hover:text-white transition-colors">B2B 구매지원</span>
               </label>
             </div>
           </div>
@@ -784,14 +739,14 @@
   <!-- ══════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════ -->
-  <footer class="bg-gray-950 text-gray-400 py-12 px-5">
+  <footer class="bg-white text-gray-500 py-12 px-5" style="border-top:1px solid #E8ECF2;">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-gray-800">
+      <div class="flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-gray-200">
 
         <!-- 회사 정보 -->
         <div class="md:max-w-xs">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-white font-bold text-lg">Fine<span class="text-teal-500">Bridge</span></span>
+          <div class="mb-4">
+            <img src="finebridge-logo.jpg" alt="파인브릿지 로고" style="height:52px; width:auto; display:block;">
           </div>
           <p class="text-xs leading-relaxed text-gray-500">
             경영컨설팅 전문회사 파인브릿지<br/>
@@ -811,7 +766,7 @@
 
         <!-- 서비스 링크 -->
         <div>
-          <p class="text-white text-sm font-semibold mb-4">서비스</p>
+          <p class="text-gray-800 text-sm font-semibold mb-4">서비스</p>
           <ul class="space-y-2 text-xs text-gray-500">
             <li><a href="#services" class="hover:text-teal-400 transition-colors">국가 지원금 분석 및 청구</a></li>
             <li><a href="#services" class="hover:text-teal-400 transition-colors">국가 정책 자금 컨설팅</a></li>
@@ -823,7 +778,7 @@
 
         <!-- 빠른 링크 -->
         <div>
-          <p class="text-white text-sm font-semibold mb-4">바로가기</p>
+          <p class="text-gray-800 text-sm font-semibold mb-4">바로가기</p>
           <ul class="space-y-2 text-xs text-gray-500">
             <li><a href="#why"     class="hover:text-teal-400 transition-colors">왜 파인브릿지인가요</a></li>
             <li><a href="#process" class="hover:text-teal-400 transition-colors">진행 절차</a></li>
@@ -833,7 +788,7 @@
         </div>
 
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
         <p>Copyright © 2025 파인브릿지. All Rights Reserved.</p>
         <a href="#" class="hover:text-gray-400 transition-colors">개인정보처리방침</a>
       </div>
@@ -858,7 +813,7 @@
     }
 
     // ── 폼 유효성 검사 헬퍼
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyNweQr4ECPMezS3tGu8Lqhff5vsW6jkGxTN3hN-slCTVWg2lhjvl5o9irV5O-3O3PY/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJvJ2AdHHti88Ig1GPqFJcRkPr0Q56TpEzojyRtTe-gkGdK67Y0thPIHHjttFDMlMxqQ/exec';
 
     function setError(inputId, errId, show) {
       const inp = document.getElementById(inputId);
